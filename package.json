@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "app": "vite --port 5171 --strictPort",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview --port 5171 --strictPort",
-    "serve": "npm run build && npm run preview",
+    "build-check": "run-p type-check \"build-only {@}\" --",
+    "preview-app": "vite preview --port 5171 --strictPort",
+    "build-preview": "npm run build && npm run preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build"
   },
