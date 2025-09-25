@@ -9,19 +9,16 @@
     id: {
       type: string,
       required: true
-    },
-    slug: string
+    }
   }>();
 
   onMounted(() => {
-    console.log(`DynamicRoute mounted with props: ${props.id}, ${props.slug}`)
+    console.log(`DynamicRoute mounted with props: id = ${props.id}`)
   })
 </script>
 
 <template>
-  <h1>Vue app - Dynamic route page</h1>
+  <h1>Dynamic route example</h1>
   <p>Id is {{ props.id }}</p>
-  <p>Selected hotel is {{ hotelStore.selectedHotel.name }}</p>
-  <RouterLink :to="{name: 'nested.route'}">Go to nested route</RouterLink>
-  <RouterView />
+  <p>Selected hotel is {{ hotelStore.hotels.find(hotel => hotel.id === Number(props.id)).name }}</p>
 </template>

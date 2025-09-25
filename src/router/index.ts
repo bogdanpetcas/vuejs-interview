@@ -1,9 +1,9 @@
 import { createRouter, type RouterHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import NotFound from '@/views/NotFound.vue'
-import AboutView from '@/views/AboutView.vue'
 import DynamicRoute from '@/views/DynamicRoute.vue'
-import NestedView from '@/views/NestedView.vue'
+import NestedRoute from '@/views/NestedRoute.vue'
+import MoreDetails from '@/views/MoreDetails.vue'
 
 function initRouter(webHistory: RouterHistory) {
   return createRouter({
@@ -15,22 +15,22 @@ function initRouter(webHistory: RouterHistory) {
         component: Home,
       },
       {
-        path: '/dynamic/:id/:slug',
+        path: '/dynamic/:id',
         name: 'dynamic',
         component: DynamicRoute,
-        props: true,
-        children: [
-          {
-            path: 'nested',
-            name: 'nested.route',
-            component: NestedView
-          }
-        ]
+        props: true
       },
       {
-        path: '/about',
-        name: 'about',
-        component: AboutView
+        path: '/nested',
+        name: 'nested',
+        component: NestedRoute,
+        children: [
+          {
+            path: 'inside',
+            name: 'nested.inside',
+            component: MoreDetails
+          }
+        ]
       },
       {
         path: '/:pathMatch(.*)*',
