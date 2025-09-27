@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Hotel } from '@/models/Hotel';
+import { type IHotel } from '@/models/Hotel';
 
 defineProps<{
-  hotel: Hotel
+  hotel: IHotel
 }>()
 </script>
 

@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { useHotelStore } from '@/stores/hotel';
 import Hotel from '@/components/Hotel.vue';
+import { ref, type Ref } from 'vue';
+import { type IHotel } from '@/models/Hotel';
 
 const hotelStore = useHotelStore();
 </script>
 
 <template>
   <h1>Hotels</h1>
-  <div class="hotel-list">
-    <a v-for="hotel in hotelStore.hotels" :key="hotel.id" href="javascript:void(0)">{{ hotel.name }} (see more)</a>
+  <ul class="hotel-list">
+    <li v-for="hotel in hotelStore.hotels" :key="hotel.id">{{ hotel.name }}</li>
     <!-- <Hotel :hotel="" /> -->
-  </div>
+  </ul>
 </template>
 
 <style scoped>
@@ -19,9 +21,12 @@ const hotelStore = useHotelStore();
   flex-direction: column;
   gap: .25rem;
   margin-top: 1rem;
+  list-style: none;
+  padding: 0;
 
-  a {
+  li {
     padding: .5rem;
+    cursor: pointer;
   }
 }
 

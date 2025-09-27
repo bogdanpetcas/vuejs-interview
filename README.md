@@ -1,7 +1,7 @@
 # VueJS interview
 
 # Ex1
-In "src/views/Home.vue", clicking on a hotel link should display the corresponding hotel information in the hotel card component ("src/components/Hotel.vue").
+In "src/views/Home.vue", clicking on a hotel name should display the corresponding hotel information in the hotel card component ("src/components/Hotel.vue").
 
 # Ex2
 *secret*
